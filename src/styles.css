@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "LLCircularWeb";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./assets/fonts/lineto-circular-black-s.woff");
+  /*src: url("lineto-circular-black-s.eot?#iefix") format("embedded-opentype"), url("lineto-circular-black-s.woff") format("woff"), url("lineto-circular-black-s.ttf") format("truetype"), url("lineto-circular-black-s.svg#LLCircularWeb-Bold") format("svg");*/
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    padding-bottom: 100px;
+    font-family: "LLCircularWeb", sans-serif;
+}
+
+input {
+    border-radius: 4px;
+    border: 1px solid #2E2F30;
+    opacity: 0.16;
+    width: 307px;
+    height: 47px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    color: #111;
+    font-size: 18px;
+}
+
+input:focus {
+    opacity: 1;
+    border: 1px solid #ffd300;
+    outline: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: "LLCircularWeb", sans-serif;
+  font-size: 18px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: "LLCircularWeb", sans-serif;
+  font-size: 18px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: "LLCircularWeb", sans-serif;
+  font-size: 18px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-family: "LLCircularWeb", sans-serif;
+  font-size: 18px;
+}
+
+button {
+    height: 47px;
+    font-family: "LLCircularWeb", sans-serif;
+    color: #111;
+    font-size: 16px;
+    background-color: #ffd300;
+    border: 1px solid #ffd300;
+    border-radius: 4px;
+    padding: 0 20px;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+.offer {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.main {
+    margin: 0 auto;
+    width: 500px;
+}
+
+.title {
+    font-size: 200px;
+    margin-top: 50px;
+    line-height: 200px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.get-it {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text-danger {
+    text-align: center;
+}
+
+.text-success {
+    text-align: center;
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 59px;
+}
+
+
+@media (max-width: 500px) {
+  .main {
+      width: 90%;
+  }
+
+  .offer {
+      width: 100%;
+  }
+
+  .title {
+    font-size: 100px;
+    margin-top: 50px;
+    line-height: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  input {
+      width: 100%;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+  }
+
+  button {
+      font-size: 15px;
+      padding: 0 25px;
+      width: 100%;
+      max-width: 260px;
+  }
+}
+.has-error{
+    border: 2px solid red !important;
+    opacity: 1
+}
+.text-success{
+    color: green;
+}
+.text-danger{
+    color: red;
+}

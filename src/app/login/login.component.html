@@ -1,0 +1,15 @@
+<h1 class="title">FOR <br> SALE</h1><h4 align = "center">Get it while it's hot.</h4>
+<section class="main">
+    <div class="offer">
+        <form class="offer-form form-inline" id="offer-form" [formGroup]="loginForm" (submit)="login(loginForm.value)">
+            <input class="form-control" type="text" placeholder="Enter Username" formControlName="username"
+            [ngClass]="{'has-error':!loginForm.controls['username'].valid && loginForm.controls['username'].touched}">
+            <input class="form-control" type="password" placeholder="Enter Password" formControlName="password"
+            [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+            <button class="btn btn-success" id="offer-button" type="submit">SUBMIT OFFER</button>
+        </form>
+        <button class="btn btn-success" id="offer-button" [routerLink]="['/register']" type="button"  (click)="register = true">Register</button>
+        <p id="offer-success" class="text-success"></p>
+        <p id="offer-error" class="text-danger"></p>
+    </div>
+</section>

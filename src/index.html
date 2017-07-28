@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://readme.md/normalize.min.css">
+    <link rel="stylesheet" href="https://readme.md/main.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://readme.md/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://readme.md/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://readme.md/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://readme.md/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://readme.md/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://readme.md/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://readme.md/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://readme.md/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://readme.md/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://readme.md/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://readme.md/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://readme.md/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://readme.md/favicon-16x16.png">
+    <link rel="manifest" href="https://readme.md/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://readme.md/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>FOR SALE: README.md</title>
+    <meta name="description" content="The README.md domain is for sale!">
+    <meta property="og:url" content="https://readme.md/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FOR SALE: README.md" />
+    <meta property="og:description" content="The README.md domain is for sale!" />
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/readme-d3f0d.appspot.com/o/forsale.jpg?alt=media&token=7eef8142-5cc3-43b5-851c-e6842c5832e1"
+    />
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)        
+}(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '146038535942880');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=146038535942880&ev=PageView
+        &noscript=1" />
+    </noscript>
+
+
+     <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-12009157-15', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+    <script src="https://readme.md/uuid.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBZPyER4sQQhh0MR_YWohDLhBVVVok7Hec",
+            databaseURL: "https://readme-d3f0d.firebaseio.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        var offerForm = document.getElementById('offer-form');
+        var offerSuccess = document.getElementById('offer-success');
+        var offerError = document.getElementById('offer-error');
+        var offerBtn = document.getElementById('offer-button');
+
+        var uid = '';
+
+        var onOfferComplete = function (error) {
+            offerBtn.disabled = false;
+            if (error) {
+                offerError.innerHTML = '🤔 something went wrong.';
+            } else {
+                ga('send', 'event', 'Offers', 'New Offer', uid);
+                offerSuccess.innerHTML = '🎉 <br> If your offer is reasonable expect to be contacted.';
+                offerForm.style.display = 'none';
+            }
+        };
+
+        function sendOffer(formObj) {
+            uid = uuid.v4();
+            firebase.database().ref('offers/' + uid).set({
+                email: formObj.email.value,
+                offer: formObj.offer.value
+            }).then(function () {
+                onOfferComplete(false);
+            }).catch(function () {
+                onOfferComplete(true);
+            });
+
+            offerBtn.disabled = true;
+
+            return false;
+        };
+    </script>
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
+</html>

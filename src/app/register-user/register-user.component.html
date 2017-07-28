@@ -1,0 +1,22 @@
+<h1 class="title">REGISTER</h1>
+<section class="main">
+    <div class="offer">
+        <form class="offer-form form-inline" id="offer-form" [formGroup]="registerForm" (submit)="register(registerForm.value)">
+            <input class="form-control" type="text" placeholder="Enter First Name" formControlName="firstName"
+            [ngClass]="{'has-error':!registerForm.controls['firstName'].valid && registerForm.controls['lastName'].touched}">
+            <input class="form-control" type="text" placeholder="Enter Last Name" formControlName="lastName"
+            [ngClass]="{'has-error':!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched}">
+            <input class="form-control" type="text" placeholder="Enter Userame" formControlName="username"
+            [ngClass]="{'has-error':!registerForm.controls['username'].valid && registerForm.controls['username'].touched}">
+            <input class="form-control" type="password" placeholder="Enter Password" formControlName="password"
+            [ngClass]="{'has-error':!registerForm.controls['password'].valid && registerForm.controls['password'].touched}">
+        <div class="form-group row">
+            <button [disabled]="loading" class="btn btn-primary col-6">Register</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a  class="btn btn-link col-6" routerLink="/login">Cancel</a>
+        </div>
+    </form>
+        <p id="offer-success" class="text-success"></p>
+        <p id="offer-error" class="text-danger"></p>
+    </div>
+</section>
